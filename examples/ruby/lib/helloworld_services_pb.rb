@@ -31,7 +31,9 @@ module Helloworld
       self.service_name = 'helloworld.Greeter'
 
       # Sends a greeting
-      rpc :SayHello, HelloRequest, HelloReply
+      rpc :SayHello, ::Helloworld::HelloRequest, ::Helloworld::HelloReply
+      # Sends another greeting
+      rpc :SayHelloAgain, ::Helloworld::HelloRequest, ::Helloworld::HelloReply
     end
 
     Stub = Service.rpc_stub_class

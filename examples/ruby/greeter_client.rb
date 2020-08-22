@@ -32,6 +32,8 @@ def main
   begin
     message = stub.say_hello(Helloworld::HelloRequest.new(name: user)).message
     p "Greeting: #{message}"
+    message = stub.say_hello_again(Helloworld::HelloRequest.new(name: user)).message
+    p "Greeting: #{message}"
   rescue GRPC::BadStatus => e
     abort "ERROR: #{e.message}"
   end
